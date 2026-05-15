@@ -127,3 +127,47 @@ This project grows through real designs & feedback.
 <img width="692" height="1025" alt="image" src="https://github.com/user-attachments/assets/982eb279-311f-429a-b3ea-5759cb762d3a" />
 
 <img width="1839" height="742" alt="Exploded Axial Gear Motor" src="https://github.com/user-attachments/assets/672ee92f-26b3-4bf1-938b-a85468b41241" />
+
+## Machine-Learning Optimization Refactor
+
+The calculator now includes a package-based foundation for a physics-first ML optimizer.
+
+Run the modern UI:
+
+```bash
+python AxialMotorFiixedParamGUI.py
+```
+
+Run smoke checks:
+
+```bash
+python3 tests/smoke_test.py
+```
+
+The legacy import remains compatible:
+
+```python
+from AxialMotorFixedParam import AxialMotorDesign
+```
+
+Optimization uses Optuna's TPE sampler to propose candidate motor variables. The deterministic physics model remains the source of truth; ML only explores the design space.
+
+### Optimization CLI Demo
+
+```bash
+python3 -m axial_motor_calculator.optimize_demo --trials 100
+python3 -m axial_motor_calculator.optimize_demo --trials 100 --radius-min 0.05 --radius-max 0.35 --voltage-min 24 --voltage-max 144
+```
+
+See `docs/OPTIMIZATION_GUIDE.md` for what is optimized and why this uses Optuna/TPE instead of a neural network.
+
+### UI Polish Notes
+
+The modern UI supports:
+
+- fixed-design calculation
+- ML-guided optimization with editable min/max bounds
+- default voltage and radius sweeps
+- sortable candidate result table
+- CSV export of optimization candidates
+- responsive background optimization thread

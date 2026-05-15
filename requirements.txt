@@ -1,0 +1,6 @@
+PyQt5
+numpy
+scipy
+scikit-learn
+optuna
+matplotlib
