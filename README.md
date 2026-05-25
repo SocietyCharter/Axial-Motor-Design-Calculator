@@ -58,7 +58,7 @@ Choose DC bus or AC RMS
 
 Enter torque & speed (RPM or electrical Hz)
 
-Leave Turns blank for auto (voltage-limited) or fix it manually (turns-limited)
+Leave Turns blank for auto (voltage-limited) or fix it manually
 
 Enable Dual Plate for two-rotor setups
 
@@ -135,7 +135,7 @@ The calculator now includes a package-based foundation for a physics-first ML op
 Run the modern UI:
 
 ```bash
-python AxialMotorFiixedParamGUI.py
+python AxialMotorFixedParamGUI.py
 ```
 
 Run smoke checks:
