@@ -429,7 +429,7 @@ Acceptance:
 - The current typo in `AxialMotorFiixedParamGUI.py` should be handled carefully to avoid breaking existing users/scripts.
 - UI threading must stay safe if optimization runs in background; PyQt widgets should only be updated on the main thread.
 
-## Open Questions for Jesse
+## Open Questions for Project Owner
 
 1. Should optimization target be mostly builder/practical output, or should we expose advanced tuning weights immediately?
 2. Should we optimize for real-world manufacturability constraints now, or defer until the physics engine is stable?
